@@ -80,10 +80,10 @@
         <div class="container">
           <a class="brand" href="http://github.com/addyosmani/jquery-ui-bootstrap">King's Content Management System</a>
           <ul class="nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Database</a></li>
-            <li><a href="#">Forms</a></li>
-            <li><?php echo anchor('admin/logout', 'Logout', 'Logout Page');  ?></li>
+            <li class="active"><?php echo anchor('control/index', 'Home', 'Logout Page');  ?></li>
+            <li><?php echo anchor('control/database', 'Database', 'Logout Page');  ?></li>
+            <li><?php echo anchor('control/forms', 'Forms', 'Logout Page');  ?></li>   
+            <li><?php echo anchor('control/logout', 'Logout', 'Logout Page');  ?></li>
           </ul>
           <form action="" class="pull-right">
           </form>
@@ -98,7 +98,7 @@
         <div class="page-header">
           <h1>King's School <small>Content Management System</small></h1>
         </div>
-          <p>Hey there wassup</p>
+          <p>Hey there home</p>
       </div>
     </div>
           

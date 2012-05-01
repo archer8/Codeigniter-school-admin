@@ -32,6 +32,14 @@ class control extends CI_Controller {
 	{
 		$this->load->view('admin/welcome');
 	}
+        public function database()
+	{
+		$this->load->view('admin/database');
+	}
+        public function forms()
+	{
+		$this->load->view('admin/forms');
+	}
 }
 
 /* End of file welcome.php */
