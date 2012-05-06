@@ -1,45 +1,54 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class control extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
-    public function __construct()
-    {
+    /**
+     * Index Page for this controller.
+     *
+     * Maps to the following URL
+     * 		http://example.com/index.php/welcome
+     * 	- or -
+     * 		http://example.com/index.php/welcome/index
+     * 	- or -
+     * Since this controller is set as the default controller in
+     * config/routes.php, it's displayed at http://example.com/
+     *
+     * So any other public methods not prefixed with an underscore will
+     * map to /index.php/welcome/<method_name>
+     * @see http://codeigniter.com/user_guide/general/urls.html
+     */
+    public function __construct() {
         session_start();
         parent::__construct();
-        
-        if (!isset($_SESSION['username']) ){
+
+        if (!isset($_SESSION['username'])) {
             redirect('admin');
         }
-        
+
+        $this->load->library('grocery_CRUD');
+        $this->load->database();
+        $this->load->helper('url');
     }
-    
-	public function index()
-	{
-		$this->load->view('admin/welcome');
-	}
-        public function database()
-	{
-		$this->load->view('admin/database');
-	}
-        public function forms()
-	{
-		$this->load->view('admin/forms');
-	}
+
+    public function index() {
+        $this->load->view('admin/welcome');
+    }
+
+    public function database() {
+        $crud = new grocery_CRUD();
+        $crud->set_table('employees');
+        $crud->set_theme('datatables');
+        $output = $crud->render();
+        $this->load->view('admin/database', $output);
+    }
+
+    public function forms() {
+        $this->load->view('admin/forms');
+    }
+
 }
 
 /* End of file welcome.php */
