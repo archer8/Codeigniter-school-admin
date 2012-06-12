@@ -28,9 +28,10 @@ class control extends CI_Controller {
             redirect('admin');
         }
 
-        $this->load->library('grocery_CRUD');
         $this->load->database();
         $this->load->helper('url');
+
+        $this->load->library('grocery_CRUD');
     }
 
     public function index() {
@@ -39,8 +40,12 @@ class control extends CI_Controller {
 
     public function database() {
         $crud = new grocery_CRUD();
+
+        $crud->set_theme('datatables');
         $crud->set_table('deltalink_webpayments');
+
         $output = $crud->render();
+
         $this->load->view('admin/database', $output);
     }
 

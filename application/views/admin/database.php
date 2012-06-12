@@ -94,7 +94,8 @@
 
         <?php echo anchor('control/index', 'return home'); ?>
 
-
-        <?php echo $output; ?>
+        <div class="container-scroll" style="width: 1200px">
+            <?php echo $output; ?>
+        </div>
     </body>
 </html>
