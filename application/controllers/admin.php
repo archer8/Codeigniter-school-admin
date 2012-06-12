@@ -15,7 +15,7 @@ class Admin extends CI_Controller {
             redirect('control');
         }
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('email', 'Email Address', 'valid_email|required');
+        $this->form_validation->set_rules('name', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[4]');
         
         if ($this->form_validation->run() !== false ) {
@@ -24,18 +24,17 @@ class Admin extends CI_Controller {
             $res = $this
                         ->admin_model
                         ->verify_user(
-                                $this->input->post('email'), 
+                                $this->input->post('name'), 
                                 $this->input->post('password')
                                 );
             
             if ($res !== false)
             {
-                $_SESSION['username'] = $this->input->post('email');
+                $_SESSION['username'] = $this->input->post('name');
                 redirect('control');
             }
             
         }
-
         $this->load->view('login_view');
     }
     

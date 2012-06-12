@@ -1,0 +1,95 @@
+/* 
+    Document   : login
+    Created on : Jun 7, 2012, 3:01:10 PM
+    Author     : me
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+label {
+    display: block;
+    margin: 0 0 .5em;
+    
+}
+
+
+.errors {
+    color: red;
+}
+body {
+    background-image: url('../img/classy_fabric.png');
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+.login {
+    background-color: blue;
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    max-width: 335px;
+
+}
+
+div {
+    display: block;
+}
+.login-box {
+    margin: 100px 0 0;
+    padding: 20px 25px 15px;
+    background: #F1F1F1;
+    border: 1px solid #E5E5E5;
+}
+.login-box h2 {
+    margin: 0 0 .75em;
+}
+
+h1, h2, h3 {
+    color:#222;
+    font-size: 1.5em;
+    font-weight: normal;
+}
+
+html {
+    font: 90% arial, helvetica, sans-serif;
+}
+/*
+.login-box input[type="submit"] {
+    height: 32px;
+    border: 1px solid red;
+    color: white;
+    background-color: red;
+    font-weight: bold;
+    border-radius: 8px 8px 8px 8px;
+}
+*/
+.button {
+    background-color: #FF0000;
+    border-radius: 4px 4px 4px 4px;
+    border: 1px solid #990000;
+    color: white;
+    font-weight: bold;
+    height: 32px;
+
+}
+.button:hover {
+    border-top-color: #b00000;
+    background: #b00000;
+    color: #ccc;
+}
+.button:active {
+    border-top-color: #f50e31;
+    background: #f50e31;
+}
+
+#password, #name {
+    width: 100%;   
+    height: 32px;
+    margin: 0 0 2em;
+}
+
+html, body, div, h1, h2, h3, h4, h5 {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}

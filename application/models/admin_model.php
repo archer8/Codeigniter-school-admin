@@ -7,14 +7,14 @@ class Admin_model extends CI_Model {
         
     }
     
-    public function verify_user($email, $password)
+    public function verify_user($name, $password)
     {
         $q = $this
                 ->db
-                ->where('email', $email)
-                ->where('password', sha1($password))
+                ->where('usr_name', $name)
+                ->where('usr_password', sha1($password))
                 ->limit(1)
-                ->get('users');
+                ->get('usr_users');
         
         if ( $q->num_rows > 0 ) {
             return $q->row();

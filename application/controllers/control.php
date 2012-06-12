@@ -39,14 +39,17 @@ class control extends CI_Controller {
 
     public function database() {
         $crud = new grocery_CRUD();
-        $crud->set_table('employees');
-        $crud->set_theme('datatables');
+        $crud->set_table('deltalink_webpayments');
         $output = $crud->render();
         $this->load->view('admin/database', $output);
     }
 
     public function forms() {
-        $this->load->view('admin/forms');
+        $crud = new grocery_CRUD();
+        $crud->set_table('tks_supporters');
+        $crud->set_theme('datatables');
+        $output = $crud->render();
+        $this->load->view('admin/forms', $output);
     }
 
 }

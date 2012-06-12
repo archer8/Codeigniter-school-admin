@@ -77,9 +77,9 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 $(oTable).dataTable({
-                     "bPaginate": true,
-                     "bRetrieve" : true,
-                      "bSort": false
+                    "bPaginate": true,
+                    "bRetrieve" : true,
+                    "bSort": false
                 }
                 
             )
@@ -92,38 +92,9 @@
 
     <body>
 
-        <!--[if IE]>
-        <link rel="stylesheet" type="text/css" href="css/custom-theme/jquery.ui.1.8.16.ie.css"/>
-        <![endif]-->
-
-        <div class="topbar">
-            <div class="fill">
-                <div class="container">
-                    <a class="brand" href="http://github.com/addyosmani/jquery-ui-bootstrap">King's Content Management System</a>
-                    <ul class="nav">
-                        <li class="active"><?php echo anchor('control/index', 'Home', 'Logout Page'); ?></li>
-                        <li><?php echo anchor('control/database', 'Database', 'Logout Page'); ?></li>
-                        <li><?php echo anchor('control/forms', 'Forms', 'Logout Page'); ?></li>   
-                        <li><?php echo anchor('control/logout', 'Logout', 'Logout Page'); ?></li>
-                    </ul>
-                    <form action="" class="pull-right">
-                    </form>
-                </div>
-            </div>
-        </div>
+        <?php echo anchor('control/index', 'return home'); ?>
 
 
-        <div class="container">
-
-            <div class="content">
-                <div class="page-header">
-                    <h1>King's School <small>Content Management System</small></h1>
-                </div>
-                <p>Hey there db</p>
-                <?php echo $output; ?>
-            </div>
-        </div>
-
-
+        <?php echo $output; ?>
     </body>
 </html>

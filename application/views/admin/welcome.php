@@ -82,8 +82,9 @@
           <ul class="nav">
             <li class="active"><?php echo anchor('control/index', 'Home', 'Logout Page');  ?></li>
             <li><?php echo anchor('control/database', 'Database', 'Logout Page');  ?></li>
-            <li><?php echo anchor('control/forms', 'Forms', 'Logout Page');  ?></li>   
-            <li><?php echo anchor('control/logout', 'Logout', 'Logout Page');  ?></li>
+            <li><?php echo anchor('control/forms', 'Forms', 'Logout Page');  ?></li>
+            <li><?php echo anchor('control/test', 'test', 'test'); ?></li>
+            <li><?php echo anchor('admin/logout', 'Logout', 'Logout Page');  ?></li>
           </ul>
           <form action="" class="pull-right">
           </form>
